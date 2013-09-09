@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'csv'
+
+CSV.foreach('mass_chip_data', headers: true) do |row|
+  towns = {}
+  towns[:youth] = row[2]
+  towns[:senior] = row[3]
+  towns[:income] = row[4]
+  towns[:births] = row[14]
+  towns[:mortality] = row[10]
+end

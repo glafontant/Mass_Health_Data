@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  senior: 1
+  youth: 1
+  low_income: 1
+  teen_birth: 1.5
+  infant_mortality: 1.5
+
+two:
+  senior: 1
+  youth: 1
+  low_income: 1
+  teen_birth: 1.5
+  infant_mortality: 1.5
