@@ -8,11 +8,29 @@
 
 require 'csv'
 
-CSV.foreach('mass_chip_data', headers: true) do |row|
+CSV.foreach('db/mass_chip_data.csv', headers: true) do |row|
   towns = {}
-  towns[:youth] = row[2]
-  towns[:senior] = row[3]
-  towns[:income] = row[4]
+  towns[:geography] = row[0]
+  towns[:youth] = row[2].delete(',').delete('$')
+  towns[:senior] = row[3].delete(',').delete('$')
+  towns[:income] = row[4].delete(',').delete('$')
   towns[:births] = row[14]
   towns[:mortality] = row[10]
+
+TownHealthRecord.where({ :geography => row[0], :youth => row[2], :senior => row[3], :low_income => row[4], :teen_birth => row[14], :infant_mortality => row[10]}).first_or_create
+#normalize the data for youth
+#normalize data for seniors
+#normalize data per capita income
 end
+
+  # t.integer  "senior"
+  #   t.integer  "youth"
+  #   t.integer  "low_income"
+  #   t.float    "teen_birth"
+  #   t.float    "infant_mortality"
+  #   t.datetime "created_at"
+  #   t.datetime "updated_at"
+  #   t.string   "geography"
+  # end
+
+

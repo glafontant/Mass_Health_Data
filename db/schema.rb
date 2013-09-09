@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130909013152) do
+ActiveRecord::Schema.define(version: 20130909022302) do
 
   create_table "town_health_records", force: true do |t|
     t.integer  "senior"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20130909013152) do
     t.float    "infant_mortality"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "geography"
   end
 
 end
