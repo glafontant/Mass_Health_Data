@@ -23,14 +23,6 @@ TownHealthRecord.where({ :geography => row[0], :youth => row[2], :senior => row[
 #normalize data per capita income
 end
 
-  # t.integer  "senior"
-  #   t.integer  "youth"
-  #   t.integer  "low_income"
-  #   t.float    "teen_birth"
-  #   t.float    "infant_mortality"
-  #   t.datetime "created_at"
-  #   t.datetime "updated_at"
-  #   t.string   "geography"
-  # end
+ #I don't think it is updating properly
 
 
